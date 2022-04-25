@@ -17,77 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmj-Kt-qBO">
-                                <rect key="frame" x="119" y="70" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="dUh-6d-T6n">
-                                    <children>
-                                        <command title="A" id="hEo-89-fYf" userLabel="A"/>
-                                        <command title="A#" id="6As-a6-v7x" userLabel="A#"/>
-                                        <command title="B" id="1OO-Ap-ZZD" userLabel="B"/>
-                                        <command title="C" id="eEI-ot-9CB" userLabel="C"/>
-                                        <command title="C#" id="nAt-Bf-Ie1" userLabel="C#"/>
-                                        <command title="D" id="qi6-P4-Yx7" userLabel="D"/>
-                                        <command title="D#" id="R4K-pg-rpF" userLabel="D#"/>
-                                        <command title="E" id="SFf-cE-yxV" userLabel="E"/>
-                                        <command title="F" id="rNc-oh-yML" userLabel="F"/>
-                                        <command title="F#" id="Wlc-sx-EH4" userLabel="F#"/>
-                                        <command title="G" id="uW6-hm-P7D" userLabel="G"/>
-                                        <command title="G#" id="KhQ-iE-MY5" userLabel="G#"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="keySelectionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="fuB-bj-lH4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PEi-Ae-HAH">
-                                <rect key="frame" x="287" y="70" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="TDE-Yq-Hqe">
-                                    <children>
-                                        <command title="Major" id="j04-45-jY2" userLabel="Major"/>
-                                        <command title="Minor" id="tSk-sG-8K1" userLabel="Minor"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="majorMinorSelectionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="mnJ-t6-7zp"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="fretboard12" translatesAutoresizingMaskIntoConstraints="NO" id="FKj-Db-fzU">
                                 <rect key="frame" x="30" y="154" width="338" height="731"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kw5-Bf-KIO">
-                                <rect key="frame" x="119" y="116" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="NCX-n2-PzF">
-                                    <children>
-                                        <command title="Major" id="Ka0-YV-5Rh" userLabel="Major"/>
-                                        <command title="Minor" id="2yx-S9-Ky7" userLabel="Minor"/>
-                                        <command title="Pentatonic" id="5x5-AW-Q83" userLabel="Pentatonic"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="scaleSelectionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="mJu-15-s19"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIW-qq-UTA">
-                                <rect key="frame" x="287" y="114" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="Kys-SH-dQN">
-                                    <children>
-                                        <command title="Standard" id="iBT-SL-scE" userLabel="Standard"/>
-                                        <command title="Drop" id="a81-f5-2o6" userLabel="Drop"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tuningSelectionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="6hx-ZV-AWS"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlC-qp-HQr">
                                 <rect key="frame" x="69" y="75" width="29" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,22 +28,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Major/Minor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p38-Dq-QZW">
-                                <rect key="frame" x="177" y="75" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBw-ls-1Z1">
                                 <rect key="frame" x="56" y="119" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXc-Dv-Kz0">
-                                <rect key="frame" x="216" y="118" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -564,15 +483,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVh-03-nSs">
-                                <rect key="frame" x="325" y="154" width="10" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9l-sE-CfC">
+                                <rect key="frame" x="274" y="154" width="11" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9l-sE-CfC">
-                                <rect key="frame" x="274" y="154" width="11" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVh-03-nSs">
+                                <rect key="frame" x="325" y="154" width="10" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -589,6 +508,49 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="12"/>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2a3-ND-LCv">
+                                <rect key="frame" x="236" y="70" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="majorMinorFlipped:" destination="BYZ-38-t0r" eventType="valueChanged" id="8pM-7b-614"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bc-yY-Jea">
+                                <rect key="frame" x="186" y="75" width="43" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42P-yj-Zcg">
+                                <rect key="frame" x="293" y="75" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E9K-Oe-96q">
+                                <rect key="frame" x="107" y="70" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <menu key="menu" id="QS6-bM-jKc">
+                                    <children>
+                                        <command title="Item 1" id="2cl-Kg-ZCr"/>
+                                        <command title="Item 2" id="N7k-jI-ymv"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lv1-jS-R07">
+                                <rect key="frame" x="107" y="114" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <menu key="menu" id="M9D-EM-U1I">
+                                    <children>
+                                        <command title="Item 1" id="WxE-oS-5is"/>
+                                        <command title="Item 2" id="isL-eE-jXR"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -633,10 +595,10 @@
                         <outlet property="fourthStringFret7" destination="MZg-lN-cKs" id="Bzb-w6-IPf"/>
                         <outlet property="fourthStringFret8" destination="E41-Xv-GYs" id="WmY-F9-X8j"/>
                         <outlet property="fourthStringFret9" destination="mFg-rZ-VZs" id="Xf7-PG-XfF"/>
-                        <outlet property="fourthtringLabel" destination="gl1-je-d7p" id="yLf-fA-v99"/>
-                        <outlet property="keyMenuButton" destination="tmj-Kt-qBO" id="GjY-rz-de2"/>
-                        <outlet property="majorMinorMenuButton" destination="PEi-Ae-HAH" id="B33-zL-F9R"/>
-                        <outlet property="scaleMenuButton" destination="kw5-Bf-KIO" id="XrR-Dl-KR6"/>
+                        <outlet property="fourthStringLabel" destination="gl1-je-d7p" id="SNs-22-Ddm"/>
+                        <outlet property="keyMenuButton" destination="E9K-Oe-96q" id="dL3-YT-l82"/>
+                        <outlet property="majorMinorSwitch" destination="2a3-ND-LCv" id="6Ff-nf-BHi"/>
+                        <outlet property="scaleMenuButton" destination="Lv1-jS-R07" id="BbU-Rq-sja"/>
                         <outlet property="secondStringFret1" destination="39w-AP-Ly2" id="Q1I-JL-SN5"/>
                         <outlet property="secondStringFret10" destination="wuL-If-2Lb" id="xja-y4-QqR"/>
                         <outlet property="secondStringFret11" destination="kH8-99-PAm" id="uco-Vq-h9S"/>
@@ -676,7 +638,6 @@
                         <outlet property="thirdStringFret8" destination="i9y-Gk-46J" id="OeN-Ur-MJc"/>
                         <outlet property="thirdStringFret9" destination="V1V-qD-zWJ" id="vUi-8Y-W5W"/>
                         <outlet property="thirdStringLabel" destination="gFz-uJ-nxu" id="srg-Jy-Azb"/>
-                        <outlet property="tuningMenuButton" destination="fIW-qq-UTA" id="5Ia-UI-47D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

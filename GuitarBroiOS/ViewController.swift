@@ -9,14 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var majorMinorSwitch: UISwitch!
     @IBOutlet weak var keyMenuButton: UIButton!
-    @IBOutlet weak var majorMinorMenuButton: UIButton!
     @IBOutlet weak var scaleMenuButton: UIButton!
-    @IBOutlet weak var tuningMenuButton: UIButton!
     
     @IBOutlet weak var sixthStringLabel: UILabel!
     @IBOutlet weak var fifthStringLabel: UILabel!
-    @IBOutlet weak var fourthtringLabel: UILabel!
+    @IBOutlet weak var fourthStringLabel: UILabel!
     @IBOutlet weak var thirdStringLabel: UILabel!
     @IBOutlet weak var secondStringLabel: UILabel!
     @IBOutlet weak var firstStringLabel: UILabel!
@@ -99,13 +99,79 @@ class ViewController: UIViewController {
     @IBOutlet weak var firstStringFret11: UIButton!
     @IBOutlet weak var firstStringFret12: UIButton!
     
-    var sixthStringFrets: [UIButton] = [];
-    var fifthStringFrets: [UIButton] = [];
-    var fourthStringFrets: [UIButton] = [];
-    var thirdStringFrets: [UIButton] = [];
-    var secondStringFrets: [UIButton] = [];
-    var firstStringFrets: [UIButton] = [];
+    var sixthStringFrets: [UIButton] = []
+    var fifthStringFrets: [UIButton] = []
+    var fourthStringFrets: [UIButton] = []
+    var thirdStringFrets: [UIButton] = []
+    var secondStringFrets: [UIButton] = []
+    var firstStringFrets: [UIButton] = []
 
+    var keyMenuItems: [UIAction] {
+        return [
+            UIAction(title: "A", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "A", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "A#", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "B", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "C", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "C#", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "D", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "D#", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "E", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "F", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "G", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "G#", handler:{ [self] (_) in
+                updateFretBoard()
+            })
+        ]
+    }
+
+    var keyMenu: UIMenu {
+        return UIMenu(title: "Select A Key", image: nil, identifier: nil, options: [], children: keyMenuItems)
+    }
+    
+    var scaleMenuItems: [UIAction] {
+        return [
+            UIAction(title: "Minor", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "Major", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "Pentatonic", handler:{ [self] (_) in
+                updateFretBoard()
+            }),
+            UIAction(title: "Blues", handler:{ [self] (_) in
+                updateFretBoard()
+            })
+        ]
+    }
+    
+    var scaleMenu: UIMenu {
+        return UIMenu(title: "Select A Scale", image: nil, identifier: nil, options: [], children: scaleMenuItems)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -186,31 +252,124 @@ class ViewController: UIViewController {
         firstStringFrets.append(firstStringFret10)
         firstStringFrets.append(firstStringFret11)
         firstStringFrets.append(firstStringFret12)
-    }
-    
-    @IBAction func keySelectionChanged(_ sender: Any) {
+        
+        keyMenuButton.menu = keyMenu
+        keyMenuButton.showsMenuAsPrimaryAction = true
+        
+        scaleMenuButton.menu = scaleMenu
+        scaleMenuButton.showsMenuAsPrimaryAction = true
         
         updateFretBoard()
     }
     
-    @IBAction func majorMinorSelectionChanged(_ sender: Any) {
-        
-        updateFretBoard()
-    }
-    
-    @IBAction func scaleSelectionChanged(_ sender: Any) {
-        
-        updateFretBoard()
-    }
-    
-    @IBAction func tuningSelectionChanged(_ sender: Any) {
-        
+    @IBAction func majorMinorFlipped(_ sender: Any) {
         updateFretBoard()
     }
     
     func updateFretBoard()
     {
+        //restringGuitar()
+        fingerNotes()
+    }
+    
+    func fingerNotes()
+    {
+        let scalePattern: [chromaticScale] = updateScalePattern()
         
+        var chromaticNote: chromaticScale = scaleValue(scaleChar: sixthStringLabel.text!)
+        chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        for fret in sixthStringFrets
+        {
+            if(scalePattern.contains(chromaticNote)) { fret.isHidden = false }
+            else { fret.isHidden = true }
+            chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        }
+        
+        chromaticNote = scaleValue(scaleChar: fifthStringLabel.text!)
+        chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        for fret in fifthStringFrets
+        {
+            if(scalePattern.contains(chromaticNote)) { fret.isHidden = false }
+            else { fret.isHidden = true }
+            chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        }
+        
+        chromaticNote = scaleValue(scaleChar: fourthStringLabel.text!)
+        chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        for fret in fourthStringFrets
+        {
+            if(scalePattern.contains(chromaticNote)) { fret.isHidden = false }
+            else { fret.isHidden = true }
+            chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        }
+        
+        chromaticNote = scaleValue(scaleChar: thirdStringLabel.text!)
+        chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        for fret in thirdStringFrets
+        {
+            if(scalePattern.contains(chromaticNote)) { fret.isHidden = false }
+            else { fret.isHidden = true }
+            chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        }
+        
+        chromaticNote = scaleValue(scaleChar: secondStringLabel.text!)
+        chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        for fret in secondStringFrets
+        {
+            if(scalePattern.contains(chromaticNote)) { fret.isHidden = false }
+            else { fret.isHidden = true }
+            chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        }
+        
+        chromaticNote = scaleValue(scaleChar: firstStringLabel.text!)
+        chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        for fret in firstStringFrets
+        {
+            if(scalePattern.contains(chromaticNote)) { fret.isHidden = false }
+            else { fret.isHidden = true }
+            chromaticNote = findNextInterval(interval: 1, note: chromaticNote)
+        }
+    }
+    
+    func updateScalePattern() -> [chromaticScale]
+    {
+        var scalePattern: [chromaticScale] = []
+        
+        switch(scaleMenuButton.currentTitle)
+        {
+        case "Pentatonic":
+            if(majorMinorSwitch.isOn)
+            {
+                scalePattern = pentatonicMinorScalePatternForKey(note: scaleValue(scaleChar: keyMenuButton.currentTitle!))
+            }
+            else
+            {
+                scalePattern = pentatonicMajorScalePatternForKey(note: scaleValue(scaleChar: keyMenuButton.currentTitle!))
+            }
+            break;
+        case "Minor":
+            scalePattern = minorScalePatternForKey(note: scaleValue(scaleChar: keyMenuButton.currentTitle!))
+            majorMinorSwitch.isOn = true;
+            break;
+        case "Major":
+            scalePattern = majorScalePatternForKey(note: scaleValue(scaleChar: keyMenuButton.currentTitle!))
+            majorMinorSwitch.isOn = false;
+            break;
+        case "Blues":
+            if(majorMinorSwitch.isOn)
+            {
+                scalePattern = bluesMinorScalePatternForKey(note: scaleValue(scaleChar: keyMenuButton.currentTitle!))
+            }
+            else
+            {
+                scalePattern = bluesMajorScalePatternForKey(note: scaleValue(scaleChar: keyMenuButton.currentTitle!))
+            }
+            break;
+        default:
+            break;
+        }
+        
+        return scalePattern
     }
 }
 
